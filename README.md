@@ -1,41 +1,30 @@
-# Leaflet Heatmap template
-This map uses a [Leaflet.Heat](https://github.com/Leaflet/Leaflet.heat) plugin
-to transform points into a heat layer.
+# SkyNet-visualization protoype 
+
+This map is constructed by leaflet.js [Leaflet.Heat](https://github.com/Leaflet/Leaflet.heat).
 
 ![Screenshot](screenshot.png)
 
-## Demo
-https://handsondataviz.github.io/leaflet-heatmap
+## How it works...
 
-Sample data by the [Metropolitan Police Service](https://data.police.uk/data/) for January–July 2020.
+SkyNet is a project that filtrates the data from the elections in Chile and georeferences the houses
+of the people who have more probability to vote for X candidate. When the data is filtrated, this template shows the results.
 
-## Make your own
+## Not everything is rainbow color
 
-1. Press **Use this template** button to create a copy of this repository in your own GitHub account.
-2. Modify map's title and description inside `index.html`.
-3. Put your point coordinates data inside `data.csv`. Don't use a header, and keep it one point per line.
-Use *latitude,longitude* (or *y,x*) order, like below:
+The electoral role at mids 2021 worked that a person in X commune
+(comuna) is assigned a random place to vote in the commune
+. This created the effect of homogeneous visualization when the maps were created. So at the moment, the visualization can not contribute extra information.
+ 
+Regardless of this fact, Recently (in 2021) a law was promulgated that the places the voters vote are the nearest places from their home. This can create interesting tendencies for future elections. 
+
+## A glimpse of how it works 
+
+data.csv store all the data from all the persons that have an X% of voting for Y Candidate, then this vector of information is displayed in the map.
+
 ```
-51.506585,-0.139387
-51.505467,-0.14655
-51.507758,-0.141284
-```
-4. Depending on your data density, you might want to tweak `radius` and `blur` parameters inside `<script>` of `index.html`:
-```javascript
-  var heat = L.heatLayer(data, {
-    radius: 25,
-    blur: 15,
-  })
+-33.447604,-70.672861,SANTIAGO,EL CENTRO,131 V
+-33.437971,-70.656535,SANTIAGO,EL CENTRO,131 V
+-33.454494,-70.63261,SANTIAGO,PARQUE ALMAGRO,131
 ```
 
 For more information on customization, see [Leaflet documentation](https://leafletjs.com/).
-
-## See other Leaflet templates
-* [Simple Leaflet map](https://github.com/HandsOnDataViz/leaflet-map-simple)
-* [Leaflet map with CSV data](https://github.com/HandsOnDataViz/leaflet-map-csv)
-* [Leaflet map with open data APIs](https://github.com/HandsOnDataViz/leaflet-maps-open-data-apis)
-* [Leaflet map with data from Socrata](https://github.com/HandsOnDataViz/leaflet-socrata)
-* [Leaflet polygon map with tabs](https://github.com/HandsOnDataViz/leaflet-map-polygon-tabs)
-* [Searcheable Map Template](https://github.com/HandsOnDataViz/searchable-map-template-csv)
-* [Leaflet Maps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-maps-with-google-sheets)
-* [Leaflet Storymaps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-storymaps-with-google-sheets)
