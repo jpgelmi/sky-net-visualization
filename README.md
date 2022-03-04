@@ -27,4 +27,8 @@ data.csv store all the data from all the persons that have an X% of voting for Y
 -33.454494,-70.63261,SANTIAGO,PARQUE ALMAGRO,131
 ```
 
+## For better implementation
+
+For better implementation, I recommend using "my-maps" for visualizing the houses of the people that have a higher probability of voting for a certain candidate. The way it works is that you save the location and the data of the person that you are studying and "my-maps" georeference for you automatically 
+
 For more information on customization, see [Leaflet documentation](https://leafletjs.com/).
